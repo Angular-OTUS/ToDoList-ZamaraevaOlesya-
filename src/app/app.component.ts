@@ -11,5 +11,4 @@ import {ToDoListComponent} from "./components/to-do-list/to-do-list.component";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todos';
 }
