@@ -1,35 +1,14 @@
-.tasks {
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-}
-
-.task {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 15px;
-}
-
 .add-task {
   padding: 5px 15px;
   display: flex;
 }
 
-.add-task > button {
-  border: 1px solid #1bcc0e;
-  border-radius: 4px;
-  padding: 5px 11px;
-  color: #1bcc0e;
-  background: transparent;
+.button--add {
+  background: #1bcc0e;
 }
 
-.task > button {
-  border: 1px solid #cc0e0e;
-  border-radius: 4px;
-  padding: 5px 11px;
-  color: #cc0e0e;
-  background: transparent;
+.button--add.disabled {
+  opacity: 0.5;
 }
 
 .add-task > input {
@@ -40,15 +19,12 @@
   color: #ededed;
 }
 
-.line {
-  border-bottom: 1px solid rgba(120, 107, 99, 0.00);
-  border-image: linear-gradient(to right, rgba(120, 107, 99, 0) ,
-    rgba(120, 107, 99, 1),
-    rgba(120, 107, 99, 1),
-    rgba(120, 107, 99, 0));
-  border-image-slice: 1;
-}
+::ng-deep {
+  mat-form-field {
+    color: #ededed;
+  }
 
-.task-text, .title-todo {
-  color: #ededed;
+  .mat-mdc-form-field-bottom-align {
+    display: none;
+  }
 }
