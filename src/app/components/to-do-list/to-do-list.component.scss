@@ -3,14 +3,6 @@
   display: flex;
 }
 
-.button--add {
-  background: #1bcc0e;
-}
-
-.button--add.disabled {
-  opacity: 0.5;
-}
-
 .add-task > input {
   font-size: 16px;
   border-radius: 5px;

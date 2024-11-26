@@ -11,10 +11,6 @@
   padding: 5px 15px;
 }
 
-.button--delete {
-  background: #cc0e0e;
-}
-
 .line {
   border-bottom: 1px solid rgba(120, 107, 99, 0.00);
   border-image: linear-gradient(to right, rgba(120, 107, 99, 0) ,
@@ -26,4 +22,35 @@
 
 .task-text, .title-todo {
   color: #ededed;
+}
+
+#page-preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #00a5f1;
+  z-index: 100500;
+}
+
+#page-preloader .spinner {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  border: 16px solid #ac0c7c;
+  border-top: 16px solid rgb(190 5 134 / 38%);
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -5,11 +5,19 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ToDoListItemComponent} from "../to-do-list-item/to-do-list-item.component";
+import {ButtonComponent} from "../button/button.component";
 
 @Component({
   selector: 'app-to-do-list',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, ToDoListItemComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ToDoListItemComponent,
+    ButtonComponent
+  ],
   templateUrl: './to-do-list.component.html',
   styleUrls: ['./to-do-list.component.scss']
 })
