@@ -6,6 +6,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ToDoListItemComponent} from "../to-do-list-item/to-do-list-item.component";
 import {ButtonComponent} from "../button/button.component";
+import {TaskFormInterface} from "../../interfaces/task-form.interface";
 
 @Component({
   selector: 'app-to-do-list',
@@ -35,9 +36,9 @@ export class ToDoListComponent {
   ) {
     this.newTask = ''
 
-    this.addTaskForm = fb.group({
-      task: ['', Validators.compose([Validators.required])]
-    })
+    this.addTaskForm = this.fb.group({
+      task: this.fb.control('', Validators.required)
+    }) as FormGroup & TaskFormInterface;
 
     this.todoList  = [
       {id: 1, text: 'Выгул собаки'},
