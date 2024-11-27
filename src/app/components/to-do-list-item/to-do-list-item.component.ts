@@ -10,9 +10,9 @@ import {ButtonComponent} from "../button/button.component";
   templateUrl: './to-do-list-item.component.html',
   styleUrls: ['./to-do-list-item.component.scss']
 })
-export class ToDoListItemComponent implements OnInit{
-  @Input() todoList: Array<TodoListInterface> = []
-  @Output('removeTask') removeTask = new EventEmitter<any>();
+export class ToDoListItemComponent {
+@Input() todoList: Array<TodoListInterface> = []
+@Output('removeTask') removeTask:EventEmitter<number> = new EventEmitter<number>();
 
   public isLoading: boolean = true
 
