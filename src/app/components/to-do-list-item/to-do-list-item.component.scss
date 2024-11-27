@@ -1,0 +1,29 @@
+.tasks {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+
+.button--delete {
+  background: #cc0e0e;
+}
+
+.line {
+  border-bottom: 1px solid rgba(120, 107, 99, 0.00);
+  border-image: linear-gradient(to right, rgba(120, 107, 99, 0) ,
+    rgba(120, 107, 99, 1),
+    rgba(120, 107, 99, 1),
+    rgba(120, 107, 99, 0));
+  border-image-slice: 1;
+}
+
+.task-text, .title-todo {
+  color: #ededed;
+}

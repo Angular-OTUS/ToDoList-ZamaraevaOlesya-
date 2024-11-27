@@ -20,6 +20,12 @@ body {
   background: #373232
 }
 
-button {
+.button {
+  border: none;
+  color: #ffffff;
+
+  border-radius: 4px;
+  padding: 5px 11px;
+
   cursor: pointer;
 }

@@ -5,27 +5,16 @@
 <br>
 <div class="container">
   <h1 class="title-todo">Вторник</h1>
-  <ul class="tasks">
-    <!--  TODO: использовать *ngFor-->
-    <li class="task">
-      <span class="task-text">Выгул собаки</span>
-      <button>delete</button>
-    </li>
-    <hr class="line">
-    <li class="task">
-      <span class="task-text">Работа</span>
-      <button>delete</button>
-    </li>
-    <hr class="line">
-    <li class="task">
-      <span class="task-text">Встреча</span>
-      <button>delete</button>
-    </li>
-    <hr class="line">
-  </ul>
+  <app-to-do-list-item [todoList]="todoList" (removeTask)="removeTask($event)"></app-to-do-list-item>
 
-  <div class="add-task">
-    <input type="text">
-    <button>add</button>
-  </div>
+  <form class="add-task" [formGroup]="addTaskForm">
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName="task" class="input">
+    </mat-form-field>
+    <button class="button button--add"
+            [disabled]="disabledAddButton"
+            [ngClass]="disabledAddButton ? 'disabled' : ''"
+            (click)="addTask()"
+    >add</button>
+  </form>
 </div>

@@ -1,0 +1,9 @@
+<ul class="tasks">
+  <ng-container *ngFor="let task of todoList">
+    <li class="task">
+      <span class="task-text">{{ task.text }}</span>
+      <button class="button button--delete" (click)="removeTasks(task.id)">delete</button>
+    </li>
+    <hr class="line">
+  </ng-container>
+</ul>
