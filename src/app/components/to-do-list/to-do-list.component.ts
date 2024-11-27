@@ -29,7 +29,7 @@ export class ToDoListComponent {
 
   public newTask: string
 
-  public addTaskForm: FormGroup
+  public addTaskForm: FormGroup & TaskFormInterface
 
   constructor(
     public fb: FormBuilder
