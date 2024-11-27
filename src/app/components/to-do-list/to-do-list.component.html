@@ -11,10 +11,11 @@
     <mat-form-field class="example-full-width">
       <input matInput formControlName="task" class="input">
     </mat-form-field>
-    <button class="button button--add"
-            [disabled]="disabledAddButton"
-            [ngClass]="disabledAddButton ? 'disabled' : ''"
-            (click)="addTask()"
-    >add</button>
+    <app-button
+      [class]="'button--add'"
+      [disabled]="disabledAddButton"
+      (click)="addTask()"
+      [title]="'add'"
+    ></app-button>
   </form>
 </div>

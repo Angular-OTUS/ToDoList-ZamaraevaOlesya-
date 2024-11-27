@@ -5,11 +5,20 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ToDoListItemComponent} from "../to-do-list-item/to-do-list-item.component";
+import {ButtonComponent} from "../button/button.component";
+import {TaskFormInterface} from "../../interfaces/task-form.interface";
 
 @Component({
   selector: 'app-to-do-list',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, ToDoListItemComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ToDoListItemComponent,
+    ButtonComponent
+  ],
   templateUrl: './to-do-list.component.html',
   styleUrls: ['./to-do-list.component.scss']
 })
@@ -20,16 +29,16 @@ export class ToDoListComponent {
 
   public newTask: string
 
-  public addTaskForm: FormGroup
+  public addTaskForm: FormGroup & TaskFormInterface
 
   constructor(
     public fb: FormBuilder
   ) {
     this.newTask = ''
 
-    this.addTaskForm = fb.group({
-      task: ['', Validators.compose([Validators.required])]
-    })
+    this.addTaskForm = this.fb.group({
+      task: this.fb.control('', Validators.required)
+    }) as FormGroup & TaskFormInterface;
 
     this.todoList  = [
       {id: 1, text: 'Выгул собаки'},

@@ -1,8 +1,14 @@
+<div *ngIf="isLoading" id="page-preloader" style="background: #24242424;">
+  <span class="spinner"></span>
+</div>
 <ul class="tasks">
   <ng-container *ngFor="let task of todoList">
     <li class="task">
       <span class="task-text">{{ task.text }}</span>
-      <button class="button button--delete" (click)="removeTasks(task.id)">delete</button>
+      <app-button [class]="'button--delete'"
+                  (click)="removeTasks(task.id)"
+                  [title]="'delete'"
+      ></app-button>
     </li>
     <hr class="line">
   </ng-container>
