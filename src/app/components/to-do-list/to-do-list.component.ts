@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {TodoListInterface} from "../../interfaces/todo-list.interface";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
@@ -13,7 +13,7 @@ import {ToDoListItemComponent} from "../to-do-list-item/to-do-list-item.componen
   templateUrl: './to-do-list.component.html',
   styleUrls: ['./to-do-list.component.scss']
 })
-export class ToDoListComponent implements OnInit {
+export class ToDoListComponent {
   public disabledAddButton: boolean = true
 
   public todoList: Array<TodoListInterface>
@@ -31,14 +31,11 @@ export class ToDoListComponent implements OnInit {
       task: ['', Validators.compose([Validators.required])]
     })
 
-    this.todoList = [
+    this.todoList  = [
       {id: 1, text: 'Выгул собаки'},
       {id: 2, text: 'Работа'},
       {id: 3, text: 'Встреча'},
     ]
-  }
-
-  ngOnInit(): void {
   }
 
   @HostListener('input') onMouseEnter() {
@@ -50,10 +47,9 @@ export class ToDoListComponent implements OnInit {
   }
 
   public addTask(): void {
-    let taskValue = this.addTaskForm.controls['task'].value;
     const newTask: TodoListInterface = {
       id: this.todoList.length + 1,
-      text: taskValue
+      text: this.addTaskForm.controls['task'].value
     };
     this.todoList.push(newTask)
     this.addTaskForm.controls['task'].setValue('');

@@ -11,7 +11,7 @@ import {TodoListInterface} from "../../interfaces/todo-list.interface";
 })
 export class ToDoListItemComponent {
 @Input() todoList: Array<TodoListInterface> = []
-@Output('removeTask') removeTask = new EventEmitter<any>();
+@Output('removeTask') removeTask:EventEmitter<number> = new EventEmitter<number>();
 
 public removeTasks(id: number) {
   this.removeTask.emit(id)
